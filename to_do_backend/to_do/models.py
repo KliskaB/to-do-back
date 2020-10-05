@@ -14,7 +14,7 @@ class ToDo(models.Model):
     ]
 
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000, blank=True)
+    description = models.TextField(blank=True)
     priority = models.CharField(
         max_length=1,
         choices=PRIORITY_CHOICES,

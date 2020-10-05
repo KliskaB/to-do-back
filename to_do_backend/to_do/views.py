@@ -25,13 +25,13 @@ class CreateUserViewSet(viewsets.GenericViewSet, CreateModelMixin):
 #     permission_classes = [permissions.AllowAny]
 
 class ToDoViewSet(viewsets.ModelViewSet, RetrieveModelMixin):
-    queryset = User.objects.all()
+    queryset = ToDo.objects.all()
     serializer_class = ToDoSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         user = self.request.user
-        return ToDo.objects.filter(user=user)
+        return super().get_queryset().filter(user=user)
 
 
 
