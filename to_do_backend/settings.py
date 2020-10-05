@@ -166,7 +166,7 @@ CORS_URLS_REGEX = r'^/api/.*$'
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
-    # 'OPTIONS',
+    'OPTIONS',
     'PATCH',
     'POST',
     'PUT',
