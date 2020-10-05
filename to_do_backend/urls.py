@@ -18,10 +18,12 @@ from django.urls import path
 from rest_framework import routers
 from rest_framework_simplejwt import views as jwt_views
 from to_do_backend.to_do.routers.user_router import usersRouter
+from to_do_backend.to_do.routers.todo_router import toDoRouter
 
 router = routers.DefaultRouter()
 # router.register(r'api/users', views.CreateUserViewSet)
 router.registry.extend(usersRouter.registry)
+router.registry.extend(toDoRouter.registry)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
