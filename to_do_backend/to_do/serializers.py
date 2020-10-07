@@ -15,6 +15,12 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
+class UserDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'username']
+
+
 class ToDoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ToDo
