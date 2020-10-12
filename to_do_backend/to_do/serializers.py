@@ -24,7 +24,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
 class ToDoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ToDo
-        fields = ['title', 'description', 'priority', 'complited']
+        fields = ['id', 'title', 'description', 'priority', 'complited']
         validators = []
 
     def create(self, validated_data):
